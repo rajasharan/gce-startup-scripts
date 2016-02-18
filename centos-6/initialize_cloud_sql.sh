@@ -12,5 +12,8 @@ BUCKET_NAME="..."
 
 cd /
 gsutil cp "gs://${BUCKET_NAME}/init.sql" .
-mysql -h "$CLOUD_SQL_HOST" -u "$ROOT_USER" -D "$DB_NAME" --password="$ROOT_PASS" --prompt="${DB_NAME}> " < init.sql
+mysql -h "$CLOUD_SQL_HOST" -u "$ROOT_USER" -D "$DB_NAME" --password="$ROOT_PASS" < init.sql
+
+#mysql -h "$CLOUD_SQL_HOST" -u "$ROOT_USER" -D "$DB_NAME" --password="$ROOT_PASS"  --prompt="${DB_NAME}> "
+#DB> source init.sql
 
