@@ -7,5 +7,5 @@ ALL_IPs="${INSTANCE_IPs},${HOME_IP}"
 echo "$ALL_IPs"
 
 #Pre-requisite: Enable Google Cloud SQL API for service accounts
-PROJECT_NAME="$2"
-gcloud sql instances patch "$PROJECT_NAME" --authorized-networks $ALL_IPs
+SQL_INSTANCE_ID="$2"
+gcloud sql instances patch "$SQL_INSTANCE_ID" --authorized-networks $ALL_IPs
